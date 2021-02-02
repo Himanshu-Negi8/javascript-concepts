@@ -12,9 +12,9 @@
 
 
 
-/*
 
 
+### Basic JavaScript Code Concept of Defined and Not Defined
 var a;
 console.log(a);
 a=10;
@@ -22,15 +22,11 @@ console.log(a);
 a="hello world";
 console.log(a);
 
-*/
 
 
 
 
 
-/*
-
-Undefined and Not Defined
 var a;
 
 console.log(a);
@@ -57,19 +53,18 @@ function b(){
 
 console.log(window.a);
 console.log(a);
-console.log(this.a);*/
+console.log(this.a);
 
 
 
 
 
+---
 
 
 
-/*
 
-
-Function invocation and variable environment
+### Function invocation and variable environment
 
 1. Output will be 10,100,1 because for each function call there will be a seprate execution context 
 and in each memory component 'x' is different because of local memory space in its own EC.
@@ -91,12 +86,7 @@ function b(){
 
 <!---------------->
 
-*/
 
-
-
-
-/*
 
 var x = 7;
 
@@ -113,9 +103,9 @@ console.log(getName);
 
 
 
-Concept of Hoisiting and Undefined/Not Defined Difference 
+### Concept of Hoisiting and Undefined/Not Defined Difference 
 
-//Execution Concept plays a game here 
+//Execution Context Concept plays a game here 
 
 getName();
 console.log(x);
@@ -132,12 +122,12 @@ var getName2 = function(){
 var getName = () =>{
 	console.log("Namaste Javascript");
 }
-*/
 
 
-/*
 
-Scope chain and lexical environment
+
+
+## Scope chain and lexical environment
 
 Scope is Directly related to lexical environment.
 
@@ -179,4 +169,3 @@ function a(){
 a();
 console.log(b);
 
-*/
