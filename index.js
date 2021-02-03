@@ -1,63 +1,100 @@
 /*
 
+//block is nothing but region between pair of curly braces and block is also known as compound statement.
+// block can be used to combine multiple statements and place it where a single line statement is required
+//Example
+if(true)
+{
+	//compound statement
+	var a =10;
+	console.log(a);
+}
 
-### Concept of let and const ,Temporal Dead Zone
 
-Let and Const declarations are hoisted in JS. It mean even witout executing a single line of code they get allocated memory but 
-intialized to undefined. They are also not fall in global space. So we can't access them before initializing any value to them.
-It will give us a Reference Error particularly with specific message can't access without initialization
 
-Temporal Dead Zone = It is the time being let and const variable hoisted and till it's initialize with any value.If we try to
-access any variable in its temporal dead zone it will throw an reference error.
+*/
 
-Example -
-```javascript
-console.log(a); 
 
-let a =10;
-var b=100;
-```
+// Block Scope means what all variables and functions we can access inside the block.
+/*let and const are block scoped it means we can not access them outside the particular block once we are out of that particular 
+   block which is not same in case of var.
 
-#### One more thing about let and normal var is that we can't redeclare the let variables it will throw the syntax error.
-
-```javascript
-
-let a =10;
-let a =100; // will throw the same syntax error i.e. a is already declared
-var b=100;
-var b =10000;
-
-```
-
-For let variables we can initialize at any place or we can also say that let variables can be left decalred only.
 
 ```javascript
 
+{
+	var a =10;
+	let b =20;
+	const c = 30; 
+	console.log(a);
+	console.log(b);
+	console.log(c);
+}
 
-let a;
-
-var b=100;
-a=10;
-
-console.log(a); 
+console.log(a);
+console.log(b); //throws reference error 
+console.log(c); // same error like above
 
 ```
-#### Const keyword work same as let but for it we have to initialize it while declaring 
+*/
+
+/*
+Block Scope and Shadowing 
+
+Shadowing is a case which is associated with block and function. A varibale that is declared outside of the block
+and if same name variable is inside the block then it shadows the outer variable means it will change the value of variable
+beacuse var declared variables are in global space instead of block scope alike let and const.
+
+Example-
 
 ```javascript
 
-let a =10;
 
-const b;//syntax error
+var a =100;
+{
+
+	var a =10;
+	let b =20;
+	const c =30;
+	console.log(a);//10
+	console.log(b);//20
+	console.log(c);//30
+}
+
+console.log(a);//10 because variable a is declared with var keyword and it shadows the outer a by changing the value
 
 
-console.log(a)
+```
+
+#### Different Case in terms of let and const beacause they are block scoped 
+
+```javascript
+let b =100;
+{
+
+	var a =10;
+	let b =20;
+	const c =30;
+	console.log(a);//10
+	console.log(b);//20
+	console.log(c);//30
+}
+
+console.log(b);//100
 
 ```
 
 
 */
 
+//same with const
 
+const c=100;
 
+function x(){
+	const c =10;
+	console.log(c);
+}
+x();
+console.log(c);
 
