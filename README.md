@@ -304,6 +304,7 @@ console.log(b);//100
 
 //same with const
 
+```javascript
 const c=100;
 
 function x(){
@@ -312,7 +313,7 @@ function x(){
 }
 x();
 console.log(c);
-
+```
 
 
 
