@@ -702,3 +702,58 @@ function attachEventListner(){
 attachEventListner();    
 
 ```
+
+---
+
+### EventLoops and CallBack Queue and MicroTask Queue
+
+
+```javascript
+
+console.log("Start");
+
+setTimeout(function(){
+    console.log("Callback");
+},3000); //callback function register at web api till its time and goes to callback queue 
+//after that event loop will check if call stack is empty pick this job and log in console 
+console.log("End");
+
+```
+/*
+Start 
+End
+CallBack
+
+*/
+
+
+
+```javascript
+
+console.log("Start");
+
+document.getElementById("btn").addEventListener('click',function cb(){
+    console.log("CallBack");
+});
+console.log("End");
+
+```
+
+
+
+```javascript
+
+console.log("Start")
+
+
+setTimeout(function cbT(){
+    console.log("timer callback")
+},5000);
+
+
+fetch("https://api.netflix.com").then(function cbF(){
+    console.log("CB Netflix");
+});
+
+console.log("End");
+```
