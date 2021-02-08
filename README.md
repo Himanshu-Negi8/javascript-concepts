@@ -229,6 +229,92 @@ if(true)
 }
 
 ```
+---
+### Functions 
+##### Function statement aka function declaration
+
+```javascript
+
+function a(){
+	console.log("a is called");
+}
+
+```
+
+
+##### Function expression
+```javascript
+
+var b = function(){
+	console.log("b is called");
+}
+
+a();
+b();
+
+```
+
+The major difference b/w function statement and expression is hoisting in function statement 'a' gets the memory and function is assigned to 'a' even without executing a single line of code but not same in-case of 'b'
+
+
+##### Anonymous function - Function without name and used where function used as a value
+
+```javascript
+
+function(){
+
+ }
+
+ ```
+
+##### Named Function Expression - same as function expression but here name is given instead of anonymous function
+
+```javascript
+
+var z = function xyz(){
+	console.log("xyz is called");
+}
+z();
+```
+
+##### Difference between Parameters and Arguments ?
+
+
+The values passed inside during the function calls are arguments and the identifier which 
+gets those value are known as parameter
+
+Example
+
+```javascript
+
+function x(param1,param2){
+
+}
+x(args1,args2);
+
+```
+
+
+##### First Class Function - the ability of functions to use as value is known as first-class function
+###### First Class Citizens
+```javascript
+
+var c = function(param1){
+	return function(){
+
+	}
+}
+
+console.log(c(function(){}));
+
+```
+
+
+
+// Arrow Functions
+
+
+
 
 
 
@@ -535,4 +621,84 @@ function x(){
 x();
 
 ```
+--- 
 
+#### CallBack Fucntion and EventListners
+
+###### what is callback function in javascript
+
+```javascript
+
+setTimeout(function(){
+    console.log("Timer");
+},5000)
+
+
+function x(y){
+    console.log("x");
+    y();
+}
+
+
+x(function y(){
+    console.log("y");
+});
+
+
+document.getElementById("clickMe")
+.addEventListener("click", function xyz(){
+    console.log("Button clicked"); 
+})
+
+```
+##### JavaScript is synchronous and single-threaded language
+
+
+##### Blocking the main thread 
+/*
+js has one call stack if any operation blocks the execution of call stack 
+that is blocking the main thread 
+*/ 
+
+
+##### Power of callbacks - allow us to do asynchronous thing in js
+
+
+//Deep about Event Listneres
+
+#### Closures Demo with Event Listneres
+
+```javascript
+
+function attachEventListner(){
+
+    let count=0;
+
+    document.getElementById("clickMe").addEventListener("click", function xyz(){
+        console.log("Button Clicked",++count); 
+    });
+
+}
+attachEventListner();    
+```
+
+
+##### Scope Demo with Event Listneres
+
+
+##### Garbage Collection & removeEventListneres
+
+```javascript
+
+function attachEventListner(){
+
+    let count=0;
+
+    document.getElementById("clickMe").addEventListener("click", function xyz(){
+        console.log("Button Clicked",++count); 
+    });
+
+}
+attachEventListner();    
+
+```
